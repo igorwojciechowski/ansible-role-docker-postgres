@@ -1,7 +1,7 @@
 - name: Create docker postgres directory
   file:
-    path: "{{ user_home }}/docker/docker_postgres"
-    owner: "{{ user_name }}"
+    path: "{{ user.home }}/docker/docker_postgres"
+    owner: "{{ user.name }}"
     group: docker
     mode: 0550
     state: directory
@@ -9,7 +9,7 @@
 - name: Copy Dockerfile
   copy:
     src: ./Dockerfile
-    dest: "{{ user_home }}/docker/docker_postgres/Dockerfile"
-    owner: "{{ user_name }}"
+    dest: "{{ user.home }}/docker/docker_postgres/Dockerfile"
+    owner: "{{ user.name }}"
     group: docker
     mode: 0550
